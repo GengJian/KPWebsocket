@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pgE-2J-8ea">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qBY-gn-cE6">
+            <objects>
+                <navigationController id="pgE-2J-8ea" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vZV-9d-Whz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CmL-Vr-ZIS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ti0-O5-KoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-986" y="-558"/>
+        </scene>
+        <!--测试Websocket-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EeQ-cs-YLf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tr1-T5-DPZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-lE-O8b">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <color key="backgroundColor" red="0.28235294119999998" green="0.4039215686" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Qzc-23-J8A"/>
+                                                </constraints>
+                                                <state key="normal" title="连接Websocket">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="connectClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N15-3G-a63"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pS-eO-ZQV">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                                <color key="backgroundColor" red="0.28235294119999998" green="0.4039215686" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="断开连接Websocket">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="disconnectClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7G-4V-Oos"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUw-PR-CBI">
+                                                <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                                <color key="backgroundColor" red="0.28235294119999998" green="0.4039215686" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="订阅所有鲲">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="subscribeAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iV3-lY-hzg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSm-b9-pqt">
+                                                <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                                <color key="backgroundColor" red="0.28235294119999998" green="0.4039215686" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="订阅单只鲲">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="subscribeSingle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nyD-eO-sDU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.51764705879999995" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jSm-b9-pqt" secondAttribute="trailing" id="1Nh-rG-N1G"/>
+                                            <constraint firstItem="9pS-eO-ZQV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tr1-T5-DPZ" secondAttribute="leading" id="7Zo-qp-67m"/>
+                                            <constraint firstItem="jSm-b9-pqt" firstAttribute="top" secondItem="sUw-PR-CBI" secondAttribute="bottom" id="84Y-fs-xty"/>
+                                            <constraint firstItem="xzn-lE-O8b" firstAttribute="top" secondItem="Tr1-T5-DPZ" secondAttribute="top" id="I4v-z6-yXh"/>
+                                            <constraint firstItem="sUw-PR-CBI" firstAttribute="height" secondItem="9pS-eO-ZQV" secondAttribute="height" id="Ikl-23-Fph"/>
+                                            <constraint firstItem="xzn-lE-O8b" firstAttribute="width" secondItem="9pS-eO-ZQV" secondAttribute="width" id="JGZ-T9-RJq"/>
+                                            <constraint firstItem="sUw-PR-CBI" firstAttribute="top" secondItem="9pS-eO-ZQV" secondAttribute="bottom" id="N0j-32-eyC"/>
+                                            <constraint firstItem="jSm-b9-pqt" firstAttribute="height" secondItem="9pS-eO-ZQV" secondAttribute="height" id="QLM-Mb-zhy"/>
+                                            <constraint firstAttribute="bottom" secondItem="jSm-b9-pqt" secondAttribute="bottom" id="Qc2-Sa-TI9"/>
+                                            <constraint firstItem="sUw-PR-CBI" firstAttribute="leading" secondItem="Tr1-T5-DPZ" secondAttribute="leading" id="R0C-27-6nD"/>
+                                            <constraint firstItem="sUw-PR-CBI" firstAttribute="width" secondItem="9pS-eO-ZQV" secondAttribute="width" id="Taj-Me-j0d"/>
+                                            <constraint firstItem="xzn-lE-O8b" firstAttribute="height" secondItem="9pS-eO-ZQV" secondAttribute="height" id="mh3-9t-kjC"/>
+                                            <constraint firstItem="9pS-eO-ZQV" firstAttribute="top" secondItem="xzn-lE-O8b" secondAttribute="bottom" id="mjX-Tn-3EN"/>
+                                            <constraint firstItem="jSm-b9-pqt" firstAttribute="width" secondItem="9pS-eO-ZQV" secondAttribute="width" id="rhc-qH-XHl"/>
+                                            <constraint firstItem="xzn-lE-O8b" firstAttribute="top" secondItem="Tr1-T5-DPZ" secondAttribute="top" id="saK-02-Ub9"/>
+                                            <constraint firstAttribute="trailing" secondItem="sUw-PR-CBI" secondAttribute="trailing" id="uRf-Dm-qCf"/>
+                                            <constraint firstItem="jSm-b9-pqt" firstAttribute="leading" secondItem="Tr1-T5-DPZ" secondAttribute="leading" id="ufs-Az-m51"/>
+                                            <constraint firstAttribute="trailing" secondItem="9pS-eO-ZQV" secondAttribute="trailing" id="wLj-ca-e0j"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.51764705879999995" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Tr1-T5-DPZ" secondAttribute="trailing" id="TCd-kg-gux"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tr1-T5-DPZ" secondAttribute="bottom" id="YFs-dV-Hnd"/>
+                                    <constraint firstItem="Tr1-T5-DPZ" firstAttribute="leading" secondItem="EeQ-cs-YLf" secondAttribute="leading" id="ZL9-4R-0xm"/>
+                                    <constraint firstItem="Tr1-T5-DPZ" firstAttribute="top" secondItem="EeQ-cs-YLf" secondAttribute="top" id="kgg-PJ-3TV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xzn-lE-O8b" secondAttribute="trailing" id="0ox-Wk-c0l"/>
+                            <constraint firstItem="EeQ-cs-YLf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GXC-gb-dnm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EeQ-cs-YLf" secondAttribute="bottomMargin" constant="8" id="PlB-76-7ZT"/>
+                            <constraint firstItem="EeQ-cs-YLf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cu9-16-TvQ"/>
+                            <constraint firstItem="xzn-lE-O8b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ikf-ji-ie9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EeQ-cs-YLf" secondAttribute="trailing" id="yBp-Nq-cF8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="测试Websocket" id="Wlz-is-dhX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.200000000000003" y="-558.17091454272872"/>
+        </scene>
+    </scenes>
+</document>
